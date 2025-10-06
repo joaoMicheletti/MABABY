@@ -1,0 +1,1115 @@
+
+<!--    
+
+    /$$ /$$    /$$                /$$$$$$             /$$$$$$   /$$                                                       /$$ /$$   
+   /$$/| $$   | $$               /$$__  $$           /$$__  $$ | $$                                                      /$$/|  $$  
+  /$$/ | $$   | $$ /$$$$$$/$$$$ | $$  \__/  /$$$$$$ | $$  \__//$$$$$$   /$$  /$$  /$$  /$$$$$$   /$$$$$$   /$$$$$$      /$$/  \  $$ 
+ /$$/  |  $$ / $$/| $$_  $$_  $$|  $$$$$$  /$$__  $$| $$$$   |_  $$_/  | $$ | $$ | $$ |____  $$ /$$__  $$ /$$__  $$    /$$/    \  $$
+|  $$   \  $$ $$/ | $$ \ $$ \ $$ \____  $$| $$  \ $$| $$_/     | $$    | $$ | $$ | $$  /$$$$$$$| $$  \__/| $$$$$$$$   /$$/      /$$/
+ \  $$   \  $$$/  | $$ | $$ | $$ /$$  \ $$| $$  | $$| $$       | $$ /$$| $$ | $$ | $$ /$$__  $$| $$      | $$_____/  /$$/      /$$/ 
+  \  $$   \  $/   | $$ | $$ | $$|  $$$$$$/|  $$$$$$/| $$       |  $$$$/|  $$$$$/$$$$/|  $$$$$$$| $$      |  $$$$$$$ /$$/      /$$/  
+   \__/    \_/    |__/ |__/ |__/ \______/  \______/ |__/        \___/   \_____/\___/  \_______/|__/       \_______/|__/      |__/   
+                                                                                                                                    
+                                                                                                                                    
+     Nos siga em nossa rede social:  https://www.instagram.com/vm_software/                                                                                                                               
+                                                                                                                                   
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mababy</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #divIconWhats {
+            cursor: pointer;
+            width: 50px;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            z-index: 6;
+        }
+        #iconWhtas{
+            cursor: pointer;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            width: 50px;           
+            z-index: 6;  /* entre o vídeo (-1) e o header (10) */
+        }
+        /* Custom CSS for animations and effects not covered by Tailwind */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu {
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-item {
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-item:not(.active) {
+            opacity: 0;
+            display: none;
+        }
+        
+        .carousel-item.active {
+            opacity: 1;
+            display: block;
+        }
+        
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-item.active .answer {
+            max-height: 500px;
+        }
+        
+        .counter {
+            transition: all 1s ease;
+        }
+        #MABABYN3{
+            margin-top: 20px;
+        }
+        @media(max-width: 800px){
+            .IMGMVV {
+                display: none;
+            }
+            #Mobille {
+                display: flex;
+                flex-direction: row;
+                font-size: 10px;
+                justify-content: space-between;
+            }
+            #P1{
+                margin-top: 8px;
+            }
+            #MABABYN3{
+            margin-top: 0px;
+            }
+        }
+        #ClienteSection h1 {
+            text-align: center;
+        }
+        .ContainerClientes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 4 colunas iguais */
+            gap: 20px;
+            padding: 20px;
+            width: 60%;
+            margin-left: 20%;
+        }
+        .cardCliente {
+            background: linear-gradient(180deg, #f28b0c, #6b240f);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+        }.cardCliente:hover {
+            box-shadow: 0PX 0px 10px rgba(0, 0, 0, 0.753);
+        }
+        .cardCliente img {
+            width: 50%;
+            margin: 10px auto;
+            display: block;
+        }
+        .nomeCliente {
+            font-weight: 600;
+            color: white;
+        }
+        @media(max-width: 600px){
+            .ContainerClientes {
+                grid-template-columns: repeat(3, 1fr);
+                margin: 0;
+                width: 100%;
+            }
+        }
+        .lstaLink {
+            display: flex;
+            flex-direction: row;
+        }
+        .lstaLink a:hover {
+            color: #0f5d75;
+            font-weight: 700;
+        }
+        #Historia{
+            width: 90%;
+            margin-left: 5%;
+        }
+        .textoLP{
+            font-size: 30px;
+
+        }
+        .instagram-media {
+            margin: auto;
+        }.espacoVideo {
+            display: flex;
+            justify-content: center;
+        }
+        .CatalogoCTA 
+        {
+            color: #0f5d75;
+        }
+
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <!-- Top Bar -->
+        <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="text-white py-1 px-4">
+            <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-2 md:mb-0">
+                    <a href="#X"><img src="assets/logoHeader.webp" alt="MABABY Logo" class="h-6"></a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#faq" class="text-sm hover:text-blue-200">Dúvidas Frequentes</a>
+                    <a href="#Contato" class="text-sm hover:text-blue-200">Contato</a>
+                    <a href="#Jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
+                </div>
+                <div id="XXX" class="flex items-center space-x-4 mt-2 md:mt-0">
+                    <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav  class="bg-white py-1 px-4">
+            <div  class="container mx-auto">
+                <ul id="Mobille" class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-8">
+                    <li class="lstaLink">
+                        <a href="#Historia" class="block px-4 py-1 text-black-800 ">A MABABY</a>
+                        <a href="#Diferenciais" class="block px-4 py-1 text-black-800 ">DIFERENCIAIS</a>
+                        <a href="#Transportes" class=" block px-4 py-1 text-black-800 ">PRODUTOS</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Carousel -->
+         
+        <section id="X" class="relative w-full h-96 md:h-screen overflow-hidden">
+            <div class="carousel-item active relative w-full h-full">
+                <div class="absolute inset-0  opacity-20"></div>
+                <img src="./assets/transportes.webp" alt="Transporte Rodoviário" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                        <a href="#Historia" style="background: linear-gradient(180deg, #048061, #0f5d75);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <div class="carousel-item relative w-full h-full">
+                <div class="absolute inset-0  opacity-20"></div>
+                <img src="assets/maquinas.webp" alt="Locação de Máquinas" class="w-full h-full object-cover">
+                <div class="absolute inset-0 flex items-center justify-center text-center px-4">
+                    <div class="text-white max-w-2xl">
+                        <h1  class="CatalogoCTA text-4xl md:text-6xl font-bold mb-4 ">Explore nosso catálogo e conheça nossos produtos.</h1>
+                        <br/><br/><br/><br/>
+                        <a href="#Locação" style="background: linear-gradient(180deg, #048061, #0f5d75);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>          
+            <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black-900 p-3 rounded-full">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black-900 p-3 rounded-full">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="0"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="1"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="2"></button>
+                <button class="carousel-dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75" data-index="3"></button>
+            </div>
+        </section>
+        <!-- WhatsApp Icon -->
+        <div id="divIconWhats">
+            <a target="_blank" href="https://api.whatsapp.com/send/?phone=5514998140452&text&type=phone_number&app_absent=0"><img id="iconWhtas"  src="assets/whats.webp" alt="iconeWhats"/></a>
+        </div>
+
+        <!-- Quick Links -->
+        <section class="py-12 px-4">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <a href="#Jobs"  class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                        <img src="./assets/VALION.webp" alt="Transporte Rodoviário" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Faça parte da MABABY</h3>
+                        </div>
+                    </a>
+                    <a href=";catalogo" target="_blank" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
+                        <img src="assets/maquinas.webp" alt="Locação de Máquinas" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Explore nosso catálogo</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--News + Video Section -->
+        <section id="Notícia" class="py-12 px-4 bg-gray-100">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-black-900">Últimas Notícias</h2>
+                
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2">
+                        <div class="space-y-6">
+                            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                                <div class="flex flex-col md:flex-row">
+                                    <img src="assets/maquina.webp" alt="Notícia 1" class="w-full md:w-1/3 h-48 object-cover">
+                                    <div class="p-4 md:w-2/3">
+                                        <h4 class="text-xl font-bold text-black-900 mb-2">MABABY amplia seu time comercial.</h4>
+                                        <p class="text-gray-600">Investimos em qualidade, inovação e tecnologia para atender nossos clientes da melhor forma possível.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                                <div class="flex flex-col md:flex-row">
+                                    <img src="./assets/frota.webp" alt="Notícia 2" class="w-full md:w-1/3 h-48 object-cover">
+                                    <div class="p-4 md:w-2/3">
+                                        <h4 class="text-xl font-bold text-black-900 mb-2">A MABAY ampliou seu estoque após registrar aumento de 45% nas vendas.</h4>
+                                        <p class="text-gray-600">Fernando, CEO da MABAY, afirma: “Nossos clientes são e sempre serão nossa prioridade.</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="espacoVideo">
+                                
+                                <blockquote class="instagram-media"
+                                    data-instgrm-permalink="https://www.instagram.com/reel/DLPjfqgPD7e/?utm_source=ig_web_copy_link&igsh=MXR2N2ZkandkNGZtag=="
+                                    data-instgrm-version="14">
+                                </blockquote>
+                                <script async src="https://www.instagram.com/embed.js"></script>
+
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-black-900 mb-2">Conheça a MABABY</h3>
+                                <p class="text-gray-600">Assista ao nosso vídeo e descubra como preparamos o seu pedido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+         <!-- Our History Section-->
+        <section id="Historia" class="py-16 px-4 bg-white">
+            <br/><br/>
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-2">Nossa História</h2>
+                    <p class="text-xl text-gray-600">+ de 10 anos de excelência</p>
+                </div>
+                
+                <div id="Historia" class="lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/1">
+                        <img src="assets/frota.webp" alt="Fundação MABABY" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="lg:w-1/1">
+                        <br/>
+                        <p class="text-black mb-4">
+                            Com mais de 10 anos de expertise nos setores de transporte rodoviário e 
+                            locação de máquinas para terraplenagem, somos uma empresa sólida e inovadora, 
+                            comprometida com a excelência em cada etapa dos nossos serviços. Nossa atuação é 
+                            guiada por princípios de responsabilidade, ética e um constante foco em 
+                            soluções inteligentes e sustentáveis, que não apenas atendem às necessidades 
+                            do presente, mas também moldam um futuro promissor para nossos clientes e parceiros.
+                            Buscamos sempre superar expectativas, oferecendo qualidade, eficiência e segurança em 
+                            todas as operações. Com um time altamente capacitado e uma infraestrutura moderna, 
+                            estamos prontos para transformar desafios em resultados duradouros, contribuindo para o 
+                            sucesso de cada projeto que assumimos.
+
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid gap-6 lg:grid-cols-2 lg:items-center ">
+                    <div class=" flex-col ">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossa Missão</h3>
+                        <p class="text-black">
+                            Entregar a melhor prestação de serviços em distribuição de higiene infantil, construindo confiança a cada atendimento e fidelizando nossos clientes com transparência, trabalho e qualidade.
+                        </p>
+                    </div>
+                    <img src="assets/equipe.webp" alt="Equipe MABABY" class="IMGMVV w-full rounded-lg shadow-md">
+                </div>
+
+                <div class="grid gap-6 lg:grid-cols-2 lg:items-center ">
+                    <img src="assets/equipe.webp" alt="Equipe MABABY" class="IMGMVV w-full rounded-lg shadow-md">
+                    <div class="flex-col">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossa Visão</h3>
+                        <p class="text-black">
+                            Ser referência no mercado de higiene infantil, reconhecida pela excelência no serviço e pela confiança duradoura dos clientes em todo o Brasil.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid gap-6 lg:grid-cols-2 lg:items-center ">   
+                    <div class="flex-col">
+                        <h3 class="text-2xl font-bold text-black-900 mb-4">Nossos Valores</h3>
+                        <p class="text-black">
+                            Transparência: comunicação clara, ética e honesta em todas as relações.
+
+                            Trabalho: comprometimento, disciplina e colaboração para entregar resultados.
+
+                            Qualidade: produtos selecionados e processos consistentes do pedido à entrega.
+
+                            Confiança: cumprir o que prometemos e construir relações de longo prazo.
+
+                            Foco no cliente: experiência que encanta, fideliza e resolve.
+
+                            Melhoria contínua: “cada vez mais” eficientes, inovando e aprendendo sempre.
+                        </p>
+                    </div>
+                    <img src="assets/equipe.webp" alt="Equipe MABABY" class="IMGMVV w-full rounded-lg shadow-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentiators Section -->
+        <section id="Diferenciais" class="py-16 px-4">
+            <br/><br/>
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-2">Nossos Diferenciais</h2>
+                    <p class="text-xl opacity-80">O que nos torna a melhor escolha para sua empresa</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Transparência e Confiança</h3>
+                                <p class="opacity-80 text-white">
+                                    Priorizamos a honestidade e a clareza, criando um ambiente de 
+                                    confiança que fortalece nossas parcerias e relações.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-minimize"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Responsabilidade e Comprometimento</h3>
+                                <p class="opacity-80 text-white">
+                                    Assumimos a responsabilidade por nossos projetos com total comprometimento, garantindo resultados de alta qualidade
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-ranking-star"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Bondade, Altruísmo e Qualidade</h3>
+                                <p class="opacity-80 text-white">
+                                    Trabalhamos com bondade e altruísmo, sem abrir mão da excelência e qualidade em todas as nossas entregas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="p-6 rounded-lg">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-black-900 p-3 rounded-full mr-4">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl text-white font-bold mb-2">Tecnologia de Ponta</h3>
+                                <p class="opacity-80 text-white">Rastreamento via satélite, monitoramento em tempo real e sistemas de gestão logística integrados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/><br/>
+            <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="text-center  text-white py-12 px-4 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold mb-6">Nossos Números</h3>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
+                        <div class="text-4xl font-bold counter" data-target="30">+ de<br/> 10</div>
+                        <div class="text-lg">Anos no mercado</div>
+                    </div>
+                    <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
+                        <div class="text-4xl font-bold counter" data-target="60000">+ de 500</div>
+                        <div class="text-lg">Empresas atendidas</div>
+                    </div>
+                    <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
+                        <div class="text-4xl font-bold counter" data-target="60">+ de 1000</div>
+                        <div class="text-lg">Operações Realizadas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- nosso Clientes - qe confia na MABABY
+        <section id="ClienteSection" class="py-16 px-4 bg-gray-100">
+            <h1 class="text-2xl font-bold text-black-900 mb-4">Quem Confia na MABABY</h1>
+            <div class="ContainerClientes">
+                <div class="cardCliente">
+                    <img src="./assets/clientes/igreja.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/entec.WEBP" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/piramidal.WEBP" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/Lineal.WEBP" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/HELBO.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/vita.webp" alt="logoClietne" />                 
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/faae.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/brz.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/meca.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/infomov.webp" alt="logoClietne" />                    
+                </div>                
+                <div class="cardCliente">
+                    <img src="./assets/clientes/econ.webp" alt="logoClietne" />
+                </div>
+                <div class="cardCliente">
+                    <img src="./assets/clientes/CYRELLA.WEBP" alt="logoClietne" />
+                </div>
+            </div>
+        </section>
+        -->
+
+        
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 px-4 ">
+            <br/><br/><br/>
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-black-900">Dúvidas Frequentes</h2>
+                
+                <div class="space-y-4">
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-black-900">Quais são os horários de atendimento da MABABY?</span>
+                            <i class="fas fa-plus text-black-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Nosso atendimento ao cliente funciona de segunda a sexta, das 8h às 18h.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-black-900">Como solicitar um orçamento?</span>
+                            <i class="fas fa-plus text-black-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Você pode solicitar um orçamento através do nosso site na seção "Orçamentos" ou pelos telefone, que estão no site, retornaremos com uma proposta em até 24 horas úteis.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-question w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 text-left">
+                            <span class="font-medium text-black-900">Como faço para rastrear minha mercadoria?</span>
+                            <i class="fas fa-plus text-black-900"></i>
+                        </button>
+                        <div class="answer">
+                            <div class="p-4 text-gray-700">
+                                Todos os nossos veículos possuem rastreamento via satélite 24 horas. 
+                                Você pode entrar em contato com a nossa equipe, onde terá acesso em tempo real à localização e status da entrega. 
+                                Também enviamos atualizações por e-mail e SMS.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600 mb-4">Não encontrou sua dúvida? Entre em contato conosco!</p>
+                    <a href="#Contato" style="background: linear-gradient(180deg, #048061, #0f5d75);" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Road Transport Section 
+        <section id="Transportes" class="py-16 px-4 bg-gray-100"> <br/><br/>
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-2">Transportes Rodoviários</h2>
+                    <p class="text-xl text-gray-600">Frota moderna e diversificada para atender todas as suas necessidades</p>
+                </div>
+                <br/><br/>
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-2">
+                        <video  autoplay loop muted>
+                            <source src="assets/definitivo.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                    </div>
+                    <div class="lg:w-1/2 lg:order-1">
+                        
+                        <p class="textoLP text-black">
+                            Oferecemos soluções práticas e eficientes para 
+                            transportar sua carga com segurança e 
+                            agilidade, diretamente da origem até o destino final. 
+                            Não perca tempo, otimize sua logística agora!
+                        </p>
+                        <br/>
+                        <a href="./lps/transportes/" target="_blank" style="background: linear-gradient(180deg, #048061, #0f5d75);" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                            Saiba como podemos te ajudar!
+                        </a>
+                    </div>
+                </div>                
+            </div>
+        </section>-->
+        
+        <!-- Machine Rental Section 
+        <section id="Locação" class="py-16 px-4 bg-white"> <br/><br/>
+            <div class="container mx-auto">
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-2">Locação de Máquinas</h2>
+                    <p class="text-xl text-gray-600">Equipamentos modernos e operadores qualificados para sua obra</p>
+                </div>
+                <br/><br/>
+                <div class="flex flex-col lg:flex-row items-center gap-8 mb-16">
+                    <div class="lg:w-1/2 lg:order-1">
+                        <video  autoplay loop muted>
+                            <source src="assets/teste.mp4" type="video/mp4">
+                            Seu navegador não suporta a tag de vídeo.
+                        </video>
+                    </div>
+                    <div class="lg:w-1/2 lg:order-2">
+                        
+                        <p class="textoLP text-black">
+                            Oferecemos soluções flexíveis e eficientes de locação de máquinas para otimizar seus projetos. 
+                            Com equipamentos de alta qualidade, garantimos desempenho, segurança e agilidade para a sua obra.
+                        </p>
+                        <br/>
+                        <a href="lps/locacao/" target="_blank" style="background: linear-gradient(180deg, #048061, #0f5d75);" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                            Saiba mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <!-- Work With Us Section -->
+        <section id="Jobs" class="py-16 px-4 bg-white">
+            <br/><br/>
+            <div id="Trabalhe" class="container mx-auto max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-4">Trabalhe Conosco</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">Faça parte de uma equipe comprometida.</p>
+                </div>
+                
+                <div class="bg-gray-100 rounded-lg p-8">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 mb-6 md:mb-0">
+                            <img src="assets/valion.webp" alt="Equipe MABABY" class="w-full rounded-lg shadow-md">
+                        </div>
+                        <div class="md:w-1/2 md:pl-8">
+                            <h3 class="text-2xl font-bold text-black-900 mb-4">Venha fazer parte do nosso time!</h3>
+                            <p class="text-gray-700 mb-4">Na MABABY, valorizamos profissionais comprometidos, inovadores e que buscam crescimento contínuo. Oferecemos:</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Plano de carreira estruturado</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Benefícios competitivos</span>
+                                </li>
+                            </ul>
+                            <a style="background: linear-gradient(180deg, #048061, #0f5d75);" href="mailto:EMAILAQUI?subject=Currículo" class="inline-block bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                                Envie seu currículo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section criar funcionalidade para enviar a mensagem personalizada para o whast do carlos -->
+        <section id="Contato" id="contact" class="py-16 px-4 bg-gray-100">
+            <br/><br/>
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-black-900">Entre em Contato</h2>
+                
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="md:flex">
+                        <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="md:w-1/2 bg-blue-900 text-white p-8">
+                            <h3 class="text-2xl font-bold mb-4">Informações de Contato</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">Endereço</h4>
+                                        <p>R. defiir - definir , definir - definir, definir
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-phone-alt mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">Telefone</h4>
+                                        <p>+55 14 99814-0452</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-envelope mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">E-mail</h4>
+                                        <p>mababy#gmail.com.br</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-clock mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">Horário de Atendimento</h4>
+                                        <p>Segunda a Sexta: 8h às 18h</p>
+                                    </div>
+                                </div>
+                                <!-- Incorporando o Google Maps -->
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14618.64081900518!2d-46.742626!3d-23.652337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5164acb977f5%3A0x657962d69c48ca4a!2sR.%20Jo%C3%A3o%20Bastos%20-%20Jardim%20S%C3%A3o%20Lu%C3%ADs%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005845-300%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1753964085192!5m2!1spt-BR!2sus" 
+                                    width="100%" 
+                                    height="auto" 
+                                    tyle="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <h4 class="font-bold mb-2">Siga-nos</h4>
+                                <div class="flex space-x-4">
+                                    <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200"><i class="fab fa-instagram fa-lg"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-1/2 p-8">
+                            <h3 class="text-2xl font-bold mb-4 text-black-900">Envie sua Mensagem</h3>
+                            <form id="contactForm" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-gray-700 mb-1">Nome Completo</label>
+                                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-gray-700 mb-1">Telefone</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-gray-700 mb-1">CNPJ da Empresa</label>
+                                    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 mb-1">E-mail</label>
+                                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-gray-700 mb-1">Mensagem</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <button type="submit" style="background: linear-gradient(180deg, #048061, #0f5d75); color: white;" class="w-full  text-ehite font-bold py-3 px-4 rounded-md transition duration-300">
+                                    Enviar Mensagem
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Budget Section funcção para enciar cotação pre definida
+        <section id="Orçamento" class="py-16 px-4 bg-gray-100">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-black-900 mb-2">Solicite um Orçamento</h2>
+                    <p class="text-xl text-gray-600">Preencha os dados abaixo e receba uma proposta personalizada</p>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <div class="lg:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class=" text-white p-4 text-center">
+                            <h3 class="text-xl font-bold">Transporte Rodoviário</h3>
+                        </div>
+                        <div class="p-6">
+                            <form id="transportForm" class="space-y-4">
+                                <div>
+                                    <label for="origin" class="block text-gray-700 mb-1">Local de Coleta</label>
+                                    <input type="text" id="origin" name="origin" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="destination" class="block text-gray-700 mb-1">Local de Entrega</label>
+                                    <input type="text" id="destination" name="destination" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="cargoType" class="block text-gray-700 mb-1">Tipo de Carga</label>
+                                    <select id="cargoType" name="cargoType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Carga Geral">Carga Geral</option>
+                                        <option value="Carga Frágil">Carga Frágil</option>
+                                        <option value="Carga Perecível">Carga Perecível</option>
+                                        <option value="Carga Perigosa">Carga Perigosa</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="weight" class="block text-gray-700 mb-1">Peso Aproximado (kg)</label>
+                                    <input type="number" id="weight" name="weight" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="volume" class="block text-gray-700 mb-1">Volume (m³)</label>
+                                    <input type="number" id="volume" name="volume" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <button type="submit" style="background: linear-gradient(180deg, #048061, #0f5d75);" class="w-full  text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                                    Solicitar Orçamento
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class=" text-white p-4 text-center">
+                            <h3 class="text-xl font-bold">Locação de Máquinas</h3>
+                        </div>
+                        <div class="p-6">
+                            <form id="machineForm" class="space-y-4">
+                                <div>
+                                    <label for="machineType" class="block text-gray-700 mb-1">Tipo de Máquina</label>
+                                    <select id="machineType" name="machineType" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                        <option value="">Selecione...</option>
+                                        <option value="Escavadeira Hidráulica">Escavadeira Hidráulica</option>
+                                        <option value="bulldozer">Retroescavadeira</option>
+                                        <option value="Mini Carregadeira">Mini Carregadeira</option>
+                                        <option value="Mini Escavadeira">Mini Escavadeira</option>
+                                        <option value="Mini Rolo Compactador">Mini Rolo Compactador</option>
+                                        <option value="Rompedor">Rompedor</option>
+                                        <option value="Rolo Compactador">Rolo Compactador</option>
+                                        <option value="Caminhão Prancha">Caminhão Prancha</option>
+                                        <option value="Caminhão Basculante">Caminhão Basculante</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="quantity" class="block text-gray-700 mb-1">Quantidade</label>
+                                    <input type="number" id="quantity" name="quantity" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="startDate" class="block text-gray-700 mb-1">Data de Início</label>
+                                    <input type="date" id="startDate" name="startDate" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="endDate" class="block text-gray-700 mb-1">Data de Término</label>
+                                    <input type="date" id="endDate" name="endDate" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="location" class="block text-gray-700 mb-1">Local de Uso (Endereço)</label>
+                                    <textarea id="location" name="location" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                                </div>
+                                <button type="submit" style="background: linear-gradient(180deg, #048061, #0f5d75);" class="w-full   text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                                    Solicitar Orçamento
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(180deg, #048061, #0f5d75);" class=" text-white pt-12 pb-6 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 text-white">A MABABY</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#Historia" class="hover:text-yellow-500 transition duration-300">Quem Somos</a></li>
+                        <li><a href="#Notícia" class="hover:text-yellow-500 transition duration-300">Notícias</a></li>
+                        <li><a href="#Contato" class="hover:text-yellow-500 transition duration-300">Contato</a></li>
+                        <li><a href="#Jobs" class="hover:text-yellow-500 transition duration-300">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+
+                
+                
+                <div class="md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4 text-white">Atendimento ao Cliente</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-2 text-yellow-500"></i>
+                            <span>+55 14 99814-0452</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i>
+                            <span>MABABY@gmail.com.br</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i>
+                            <span>R. definir -definir,  definir - definir, definir</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mt-1 mr-2 text-yellow-500"></i>
+                            <span>Segunda a Sexta: 8h às 18h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="border-white my-6">
+            
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>© 2025 MABABY – Todos os direitos reservados</p>
+                </div>
+                
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <span>Desenvolvido por: <a href="https://www.instagram.com/vm_software/" target="_blank"> vm_software</a></span>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a target="_blank" href="https://api.whatsapp.com/send/?phone=5514998140452" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-yellow-500 transition duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carousel
+            const carouselItems = document.querySelectorAll('.carousel-item');
+            const carouselDots = document.querySelectorAll('.carousel-dot');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            let currentIndex = 0;
+            let intervalId;
+            
+            function showSlide(index) {
+                carouselItems.forEach(item => item.classList.remove('active'));
+                carouselDots.forEach(dot => dot.classList.remove('bg-white', 'bg-opacity-75'));
+                
+                carouselItems[index].classList.add('active');
+                carouselDots[index].classList.add('bg-white', 'bg-opacity-75');
+                currentIndex = index;
+            }
+            
+            function nextSlide() {
+                let newIndex = (currentIndex + 1) % carouselItems.length;
+                showSlide(newIndex);
+            }
+            
+            function prevSlide() {
+                let newIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+                showSlide(newIndex);
+            }
+            
+            function startAutoPlay() {
+                intervalId = setInterval(nextSlide, 5000);
+            }
+            
+            function stopAutoPlay() {
+                clearInterval(intervalId);
+            }
+            
+            // Initialize
+            showSlide(0);
+            startAutoPlay();
+            
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+            
+            carouselDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    showSlide(parseInt(dot.dataset.index));
+                    stopAutoPlay();
+                    startAutoPlay();
+                });
+            });
+            
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all items first
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question i').classList.remove('fa-minus');
+                        i.querySelector('.faq-question i').classList.add('fa-plus');
+                    });
+                    
+                    // Toggle current item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                        question.querySelector('i').classList.remove('fa-plus');
+                        question.querySelector('i').classList.add('fa-minus');
+                    }
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const company = document.getElementById('company').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                const whatsappMessage = `Olá, meu nome é ${name} (${company}). ${message}. Meu telefone é ${phone} e meu e-mail ${email}.`;
+                
+                window.location.href = `https://api.whatsapp.com/send?phone=5514998140452&text=${encodeURIComponent(whatsappMessage)}`;
+            });
+            
+            // Budget forms
+            const transportForm = document.getElementById('transportForm');
+            const machineForm = document.getElementById('machineForm');
+            
+            transportForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                //alert('Área em desenvolvimento. Em breve você poderá solicitar orçamentos diretamente pelo site..');
+                let coleta = document.querySelector("#origin").value;
+                let entrega = document.querySelector("#destination").value;
+                let tipoCarga = document.querySelector("#cargoType").value;
+                let pesoCarga = document.querySelector("#weight").value;
+                let volumeCarga = document.querySelector("#volume").value;
+
+                const whatsappMessageT = `Olá, Venho atrávez do site "MABABY" e gostaria de uma proposta, segue ingformações:  *Local de Coleta:*(${coleta}). *Local de Destino:*${entrega}. *Tipo da carga:*${tipoCarga}. *Peso aproximado:*${pesoCarga}. *Volume: ${volumeCarga}`;
+                
+                window.location.href = `https://api.whatsapp.com/send?phone=5511981651780&text=${encodeURIComponent(whatsappMessageT)}`;
+            });
+            
+            machineForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let maquina = document.querySelector("#machineType").value;
+                let quantidade = document.querySelector("#quantity").value;
+                let inicioT = document.querySelector("#startDate").value;
+                let terminoT = document.querySelector("#endDate").value;
+                let endereço = document.querySelector("#location").value;
+                
+                const Maquinas = `Olá, Venho atrávez do site "MABABY" e gostaria de uma proposta, segue ingformações: *Maquina: *${maquina}. *Quantidade: *${quantidade}. *Data inicial: *${inicioT}. *Data Termino: *${terminoT}. *Enderço: *${endereço}.`;
+                
+                window.location.href = `https://api.whatsapp.com/send?phone=5511981651780&text=${encodeURIComponent(Maquinas)}`;
+            });
+            
+            // Counter animation
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            }
+            
+            // Start counter animation when section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            const counterSection = document.querySelector('.bg-blue-900.text-white.py-12.px-4.rounded-lg.shadow-lg');
+            if (counterSection) {
+                observer.observe(counterSection);
+            }
+            
+            // Mobile menu toggle (if needed)
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
