@@ -80,10 +80,10 @@
     word-wrap: break-word;
   }
   .desc{
-    font-size: 14px;
+    font-size: clamp(14px, 1.6vw, 15px);
     color: var(--muted);
-    line-height: 1.45;
     margin: 0 0 12px;
+    flex-grow: 1;
   }
 
   /* Botão grande e “touch-friendly” */
@@ -93,12 +93,10 @@
     justify-content: center;
     padding: 12px 14px;
     border-radius: 12px;
-    background: linear-gradient(180deg, #048061, #0f5d75);
+    background: linear-gradient(180deg, #048061b9, #0f5d75b2);
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    min-height: 44px;     /* alvo de toque confortável */
-    width: 100%;          /* cheio em telas pequenas */
   }
   .buy:hover{ filter: brightness(.95) }
 
