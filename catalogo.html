@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+</head>
+<body>
+    <section id="catalogo-simples" style="--gap:16px; --radius:16px; --brand:#0E4DFB; --text:#1E1E1E; --muted:#6B7280; --bg:#FFFFFF; --shadow:0 6px 24px rgba(0,0,0,.06);">
+<style>
+  #catalogo-simples {
+    --gap: 16px; 
+    --radius: 16px; 
+    --brand: #0E4DFB; 
+    --text: #1E1E1E; 
+    --muted: #6B7280; 
+    --bg: #FFFFFF; 
+    --shadow: 0 6px 24px rgba(0,0,0,.06);
+    --min-card-w: 220px;  /* largura mínima do card (ajuste se quiser) */
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue','Noto Sans',Arial;
+    color: var(--text);
+    background: var(--bg);
+  }
+  #catalogo-simples .wrap{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(20px, 3vw, 32px) 20px;
+  }
+  #catalogo-simples h2{
+    font-size: clamp(22px, 2.5vw, 30px);
+    margin: 0 0 6px;
+  }
+  #catalogo-simples p.lead{
+    margin: 0 0 24px;
+    color: var(--muted);
+    font-size: clamp(14px, 1.5vw, 16px);
+  }
+
+  .category{
+    margin: 28px 0 10px;
+    font-size: clamp(16px, 2.2vw, 20px);
+    font-weight: 700;
+  }
+
+  /* GRID responsivo (sem breakpoints obrigatórios) */
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--min-card-w), 1fr));
+    gap: var(--gap);
+  }
+
+  /* CARD */
+  .card{
+    border: 1px solid #eef0f4;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .thumb{
+    padding: 10px;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  .thumb img{
+  }
+  .body{ padding: 14px }
+  .name{
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 6px;
+    font-size: clamp(15px, 1.9vw, 16px);
+    word-wrap: break-word;
+  }
+  .desc{
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.45;
+    margin: 0 0 12px;
+  }
+
+  /* Botão grande e “touch-friendly” */
+  .buy{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #048061, #0f5d75);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    min-height: 44px;     /* alvo de toque confortável */
+    width: 100%;          /* cheio em telas pequenas */
+  }
+  .buy:hover{ filter: brightness(.95) }
+
+  /* Ajustes sutis para telas menores */
+  @media (max-width: 480px){
+    .desc{ font-size: 13.5px }
+    .body{ padding: 12px }
+  }
+</style>
+  <div class="wrap">
+    <h2>Catálogo Mababy</h2>
+    <a href="index.html">Voltar</a>
+    <!-- ================= HIGIENE E CUIDADOS ================= -->
+    <div class="category">Higiene e Cuidados</div>
+    <div class="grid">
+      <!-- Muriel Baby – Águas de Colônia -->
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/aguadecolonia100ml.webp" alt="Água de Colônia Menina 100ml"></div>
+        <div class="body">
+          <h3 class="name">Água de Colônia Baby Menina 100ml</h3>
+          <p class="desc">Perfume suave para o dia a dia do bebê.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/aguadecoloniamenino100ml.webp" alt="Água de Colônia Menino 100ml"></div>
+        <div class="body">
+          <h3 class="name">Água de Colônia Baby Menino 100ml</h3>
+          <p class="desc">Toque fresquinho e confortável.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/aguadecolonialavanda100ml.webp" alt="Água de Colônia Lavanda 100ml"></div>
+        <div class="body">
+          <h3 class="name">Água de Colônia Lavanda 100ml</h3>
+          <p class="desc">Lavanda suave para momentos relaxantes.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/agualavandacamomila.webp" alt="Água de Colônia Camomila 100ml"></div>
+        <div class="body">
+          <h3 class="name">Água de Colônia Camomila 100ml</h3>
+          <p class="desc">Conforto e bem-estar com camomila.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+
+      <!-- Pompom – Sabonetes / Talco / Colônia -->
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/sabonetgliceriano.webp" alt="Sabonete Glicerinado 70g"></div>
+        <div class="body">
+          <h3 class="name">Sabonete Glicerinado 70g</h3>
+          <p class="desc">Limpeza delicada com glicerina.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/sabonetehidratante.webp" alt="Sabonete Hidratante 70g"></div>
+        <div class="body">
+          <h3 class="name">Sabonete Hidratante 70g</h3>
+          <p class="desc">Hidratação suave e toque macio.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/talco200.webp" alt="Talco 200g"></div>
+        <div class="body">
+          <h3 class="name">Talco 200g</h3>
+          <p class="desc">Ajuda a manter a pele sequinha e confortável.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- ================= CABELOS E BANHO ================= -->
+    <div class="category">Cabelos e Banho</div>
+    <div class="grid">
+      <!-- Muriel Baby – Shampoos / Condicionadores / Cremes / Kits -->
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/shampoobabymenina100ml.webp" alt="Shampoo Baby Menina 100ml"></div>
+        <div class="body">
+          <h3 class="name">Shampoo Baby Menina 100ml</h3>
+          <p class="desc">Limpeza suave e brilho natural.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/caondicionadormeninababy.webp" alt="Condicionador Baby Menina 100ml"></div>
+        <div class="body">
+          <h3 class="name">Condicionador Baby Menina 100ml</h3>
+          <p class="desc">Desembaraço fácil e fios macios.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/cremedepentearbabymenina.webp" alt="Creme de Pentear Lavanda 100ml"></div>
+        <div class="body">
+          <h3 class="name">Creme de Pentear Lavanda 100ml</h3>
+          <p class="desc">Modela e hidrata sem pesar.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/horadobanhomenina.webp" alt="Kit Hora do Banho Menina"></div>
+        <div class="body">
+          <h3 class="name">Kit Hora do Banho (Menina)</h3>
+          <p class="desc">Shampoo + Condicionador + Sabonete.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+
+      <!-- Pompom – Shampoos / Condicionadores / Spray -->
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/camomilashampoo400ml.webp" alt="Shampoo Camomila 400ml"></div>
+        <div class="body">
+          <h3 class="name">Shampoo Camomila 400ml</h3>
+          <p class="desc">Camomila para fios macios e cheirosos.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/condicionadorsuave200.webp" alt="Condicionador Suave 200ml"></div>
+        <div class="body">
+          <h3 class="name">Condicionador Suave 200ml</h3>
+          <p class="desc">Desembaraça e dá brilho.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/spraydesembaracante.webp" alt="Spray Desembaraçante 200ml"></div>
+        <div class="body">
+          <h3 class="name">Spray Desembaraçante 200ml</h3>
+          <p class="desc">Pentear sem puxões.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+
+      <!-- Nazca Acqua Kids – exemplos -->
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/shampooalgodao.webp" alt="Shampoo Algodão Doce 250ml"></div>
+        <div class="body">
+          <h3 class="name">Shampoo Algodão Doce 250ml</h3>
+          <p class="desc">Cheirinho doce e limpeza suave.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- ================= ALIMENTAÇÃO INFANTIL ================= -->
+    <div class="category">Alimentação Infantil</div>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/coporosa.webp" alt="Copo Treinamento 360 Rosa 240ml"></div>
+        <div class="body">
+          <h3 class="name">Copo Treinamento 360 Rosa 240ml</h3>
+          <p class="desc">Transição segura da mamadeira para o copo.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/copocomhelice.webp" alt="Copo Divertido com Hélice Rosa 330ml"></div>
+        <div class="body">
+          <h3 class="name">Copo Divertido com Hélice 330ml</h3>
+          <p class="desc">Diversão garantida na hora de beber.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/garrafaazul.webp" alt="Garrafa Térmica Inox Azul 400ml"></div>
+        <div class="body">
+          <h3 class="name">Garrafa Térmica Inox Azul 400ml</h3>
+          <p class="desc">Bebida na temperatura ideal.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/copodosador.webp" alt="Dosador de Leite em Pó"></div>
+        <div class="body">
+          <h3 class="name">Dosador de Leite em Pó</h3>
+          <p class="desc">Porções fáceis e higiênicas para o dia a dia.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- ================= CUIDADOS E ORGANIZAÇÃO ================= -->
+    <div class="category">Cuidados e Organização</div>
+    <div class="grid">
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/pratinhodecachorro.webp" alt="Prato Bichinho com Divisória - Cachorrinho"></div>
+        <div class="body">
+          <h3 class="name">Prato Bichinho com Divisória</h3>
+          <p class="desc">Refeições mais organizadas e divertidas.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/termometrodebanheira.webp" alt="Termômetro de Banheira"></div>
+        <div class="body">
+          <h3 class="name">Termômetro de Banheira</h3>
+          <p class="desc">Temperatura certa para o banho do bebê.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/higienedemamadeira.webp" alt="Kit Higienizador de Mamadeiras"></div>
+        <div class="body">
+          <h3 class="name">Kit Higienizador de Mamadeiras</h3>
+          <p class="desc">Limpeza completa e prática no dia a dia.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb"><img src="assets/catalogo/kithigiene.webp" alt="Kit Higiene com Nécessaire"></div>
+        <div class="body">
+          <h3 class="name">Kit Higiene com Nécessaire (5 peças)</h3>
+          <p class="desc">Organização completa para o bebê.</p>
+          <a class="buy" target="_blank" rel="noopener" href="https://wa.me/5514998140452?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Gostaria%20de%20aderir%20um%20produto.">Comprar</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</body>
+</html>
