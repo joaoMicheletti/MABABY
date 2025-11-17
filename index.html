@@ -24,7 +24,27 @@
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Mostrar popup após 2 segundos
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                document.getElementById("popupBlack").classList.remove("hidden");
+            }, 2000);
+        });
+        // Fechar popup
+        function closePopup() {
+            document.getElementById("popupBlack").classList.add("hidden");
+        }
+    </script>
     <style>
+        /* Animação suave do popup */
+        @keyframes popupScale {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-popup {
+            animation: popupScale 0.4s ease-out forwards;
+        }
         #divIconWhats {
             cursor: pointer;
             width: 50px;
@@ -184,7 +204,7 @@
     <!-- Header -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <!-- Top Bar -->
-        <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="text-white py-1 px-4">
+        <div style="background: linear-gradient(180deg, #048061, #048061);" class="text-white py-1 px-4">
             <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-2 md:mb-0">
                     <a href="#X"><img src="assets/logoHeader.webp" alt="MABABY Logo" class="h-6"></a>
@@ -195,7 +215,12 @@
                     <a href="#Jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
                 </div>
                 <div id="XXX" class="flex items-center space-x-4 mt-2 md:mt-0">
-                    <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a target="_blank" href="carrinho.html" class="text-white hover:text-blue-200">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -224,25 +249,24 @@
                 <img src="./assets/transportes.webp" alt="Transporte Rodoviário" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                     <div class="text-white max-w-2xl">
-                        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
                         <a href="#Historia" style="background: linear-gradient(180deg, #048061, #0f5d75);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Nossa História</a>
                     </div>
                 </div>
             </div>
 
 
-            
-            <div class="carousel-item relative w-full h-full">
+            <div class="carousel-item active relative w-full h-full">
                 <div class="absolute inset-0  opacity-20"></div>
-                <img src="assets/maquinas.webp" alt="Locação de Máquinas" class="w-full h-full object-cover">
+                <img src="assets/maquinas.webp" alt="mababy" class="w-full h-full object-cover">
                 <div class="absolute inset-0 flex items-center justify-center text-center px-4">
                     <div class="text-white max-w-2xl">
-                        <h1  class="CatalogoCTA text-3xl md:text-5xl font-bold mb-4 ">Explore nosso catálogo e conheça nossos produtos.</h1>
-                        <br/><br/>
+                        <h1  class="CatalogoCTA text-3xl md:text-5xl font-bold mb-4 ">Explore nosso catálogo.</h1>
                         <a href="catalogo.html" style="background: linear-gradient(180deg, #048061, #0f5d75);"  class="hover:bg-yellow-600 text-white-900 font-bold py-3 px-8 rounded-full transition duration-300">Saiba Mais</a>
                     </div>
                 </div>
-            </div>          
+            </div>
+            
+            
             <button class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 text-black-900 p-3 rounded-full">
                 <i class="fas fa-chevron-left"></i>
             </button>
@@ -268,13 +292,13 @@
                 <div class="flex flex-col md:flex-row gap-6">
                     <a href="#Jobs"  class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
                         <img src="./assets/VALION.webp" alt="Transporte Rodoviário" class="w-full h-64 md:h-80 object-cover">
-                        <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-green-700 bg-opacity-20 flex items-center justify-center">
                             <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Faça parte da MABABY</h3>
                         </div>
                     </a>
                     <a href="catalogo.html" target="_blank" class="flex-1 relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 group">
                         <img src="assets/maquinas.webp" alt="Locação de Máquinas" class="w-full h-64 md:h-80 object-cover">
-                        <div class="absolute inset-0 bg-orange-900 bg-opacity-30 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-green-700 bg-opacity-20 flex items-center justify-center">
                             <h3 class="text-white text-2xl md:text-3xl font-bold group-hover:scale-105 transition duration-300">Explore nosso catálogo</h3>
                         </div>
                     </a>
@@ -299,7 +323,13 @@
                                     <img src="assets/maquina.webp" alt="Notícia 1" class="w-full md:w-1/3 h-48 object-cover">
                                     <div class="p-4 md:w-2/3">
                                         <h4 class="text-xl font-bold text-black-900 mb-2">MABABY amplia seu time comercial.</h4>
-                                        <p class="text-gray-600">Investimos em qualidade, inovação e tecnologia para atender nossos clientes da melhor forma possível.</p>
+                                        <p class="text-gray-600">
+                                            Investimos em qualidade, inovação e tecnologia para 
+                                            oferecer o melhor aos nossos clientes. Agora, com a 
+                                            parceria firmada com o maior atacado do Brasil, 
+                                            contamos com a força de mais de 3.000 vendedores 
+                                            para ampliar ainda mais nosso alcance.
+                                        </p>
                                     </div>
                                 </div>
                             </article>
@@ -354,8 +384,45 @@
                     <div class="lg:w-1/1">
                         <br/>
                         <p class="text-black mb-4">
-                            Historia da empresa a ser definida............................
+                            A MABABY nasceu de uma percepção simples, porém transformadora: o mercado infantil precisava de mais cuidado, mais humanidade e mais respeito com quem realmente importa — o cliente.
 
+                            Nos bastidores do comércio, acompanhando de perto a rotina dos lojistas, percebemos uma realidade que incomodava: muitas distribuidoras tratavam o cliente apenas como um número. Havia pressa, mas faltava atenção; havia produto, mas faltava vínculo.
+
+                            Foi então que surgiu o propósito que redefiniu tudo:
+                            criar uma distribuidora feita de pessoas para pessoas, onde cada relação é construída com empatia, excelência e verdade.
+
+                            Assim nasceu a MABABY — não de uma ideia rápida, mas de anos de vivência, sensibilidade e do desejo genuíno de fazer diferente.
+                        </p>
+                        <br/>
+                        <h3 class="font-bold">De Onde Viemos</h3>
+                        <br/>
+                        <p class="text-black mb-4">
+                            Antes de existir uma marca, existia um representante comercial com olhar atento, escutando histórias, dores e expectativas de quem vive o varejo real.
+                            Foi vivendo essa rotina que percebemos uma oportunidade enorme:
+                            o mercado infantil merecia mais cuidado e mais profissionalismo.
+
+                            Com coragem, propósito e muita determinação, transformamos essa visão em ação.
+                            Os primeiros passos foram simples: trabalhar com dedicação, respeitar o cliente e nunca perder o foco na qualidade.
+
+                            Mas essa essência — humana, comprometida e verdadeira — foi o que abriu caminho para tudo que viria.
+                        </p>
+                        <br/>
+                        <h3 class="font-bold">Nossa Evolução</h3>
+                        <br/>
+                        <p class="text-black mb-4">
+                            O crescimento da MABABY não aconteceu por acaso.
+                            Ele nasceu de noites de planejamento, dias de estrada, erros corrigidos rapidamente e decisões estratégicas guiadas por um único objetivo:
+
+                            fazer melhor do que o mercado estava acostumado a ver.
+
+                            A primeira grande expansão foi um marco:
+                            alcançamos novos estados, ultrapassamos fronteiras e consolidamos um modelo de distribuição reconhecido pela eficiência, agilidade e seriedade.
+
+                            Hoje, com orgulho, celebramos um dos maiores passos da nossa história:
+                            a parceria com o maior atacado do Brasil e a força de um time comercial com mais de 3.000 vendedores impulsionando nosso alcance.
+
+                            Isso não apenas faz a MABABY crescer —
+                            faz nossos parceiros crescerem junto.
                         </p>
                     </div>
                 </div>
@@ -388,18 +455,16 @@
                     <div class="flex-col">
                         <h3 class="text-2xl font-bold text-black-900 mb-4">Nossos Valores</h3>
                         <p class="text-black">
-                            Transparência: comunicação clara, ética e honesta em todas as relações.
-
-                            Trabalho: comprometimento, disciplina e colaboração para entregar resultados.
-
-                            Qualidade: produtos selecionados e processos consistentes do pedido à entrega.
-
-                            Confiança: cumprir o que prometemos e construir relações de longo prazo.
-
-                            Foco no cliente: experiência que encanta, fideliza e resolve.
-
-                            Melhoria contínua: “cada vez mais” eficientes, inovando e aprendendo sempre.
+                            <strong>Vendemos o que o cliente quer e entregamos o que ele precisa:</strong> nossa cultura é construída sobre processos validados que garantem eficiência e resultado.
+                            <br/><br/><strong>Transparência:</strong> comunicação clara e ética em todas as relações.  
+                            <strong>Trabalho:</strong> comprometimento e disciplina que sustentam nossa cultura forte.  
+                            <br/><strong>Qualidade:</strong> processos refinados do pedido à entrega.  
+                            <br/><strong>Confiança:</strong> cumprimos o que prometemos e construímos relações duradouras.  
+                            <br/><strong>Foco no cliente:</strong> experiência que encanta, fideliza e resolve.  
+                            <br/><strong>Melhoria contínua:</strong> evoluímos sempre — inovando e aprendendo a cada etapa.
                         </p>
+
+
                     </div>
                     <div style="display: flex; justify-content: center;">
                         <img src="assets/valores.webp" alt="Equipe MABABY" class="IMGMVV w-100 rounded-lg shadow-md lg:items-center">
@@ -470,30 +535,47 @@
                             </div>
                             <div>
                                 <h3 class="text-xl text-white font-bold mb-2">Tecnologia de Ponta</h3>
-                                <p class="opacity-80 text-white">Rastreamento via satélite, monitoramento em tempo real e sistemas de gestão logística integrados.</p>
+                                <p class="opacity-80 text-white">
+                                    Transparência, qualidade e segurança no transporte.
+                                    Acompanhamos cada etapa da sua carga com clareza e responsabilidade.
+                                    Para informações detalhadas sobre seu pedido, entre em contato com nossa equipe.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <br/><br/>
-            <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="text-center  text-white py-12 px-4 rounded-lg shadow-lg">
+            <div style="background: linear-gradient(180deg, #048061, #fdfdfd);" class="text-center text-white py-12 px-4 rounded-lg ">
                 <h3 class="text-2xl font-bold mb-6">Nossos Números</h3>
                 <div class="flex flex-wrap justify-center gap-8">
+
+                    <!-- Card 1 -->
                     <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
-                        <div class="text-4xl font-bold counter" data-target="30">+ de<br/> 5</div>
+                        <div class="text-4xl font-bold">
+                            + de<br/> <span class="counter" data-target="5">0</span>
+                        </div>
                         <div class="text-lg">Anos no mercado</div>
                     </div>
+
+                    <!-- Card 2 -->
                     <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
-                        <div class="text-4xl font-bold counter" data-target="60000">+ de 1000</div>
+                        <div class="text-4xl font-bold">
+                            + de <span class="counter" data-target="1000">0</span>
+                        </div>
                         <div class="text-lg">Empresas atendidas</div>
                     </div>
+
+                    <!-- Card 3 -->
                     <div class="bg-white text-black p-6 rounded-lg shadow-md w-48">
-                        <div class="text-4xl font-bold counter" data-target="60">+ de 5000</div>
+                        <div class="text-4xl font-bold">
+                            + de <span class="counter" data-target="5000">0</span>
+                        </div>
                         <div class="text-lg">Operações Realizadas</div>
                     </div>
+
                 </div>
             </div>
+
         </section>
 
         <!-- nosso Clientes - qe confia na MABABY
@@ -579,9 +661,8 @@
                         </button>
                         <div class="answer">
                             <div class="p-4 text-gray-700">
-                                Todos os nossos veículos possuem rastreamento via satélite 24 horas. 
-                                Você pode entrar em contato com a nossa equipe, onde terá acesso em tempo real à localização e status da entrega. 
-                                Também enviamos atualizações por e-mail e SMS.
+                                Acompanhamos cada etapa com clareza e responsabilidade, mantendo você informado sempre que precisar.
+                                Para consultar a localização ou o status do seu pedido, entre em contato com nossa equipe.
                             </div>
                         </div>
                     </div>
@@ -704,14 +785,22 @@
                 
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div class="md:flex">
-                        <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="md:w-1/2 bg-blue-900 text-white p-8">
+                        <div style="background: linear-gradient(180deg, #048061, #048061);" class="md:w-1/2 bg-blue-900 text-white p-8">
                             <h3 class="text-2xl font-bold mb-4">Informações de Contato</h3>
                             <div class="space-y-4">
                                 <div class="flex items-start">
                                     <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
                                     <div>
-                                        <h4 class="font-bold">Endereço</h4>
-                                        <p>R. defiir - definir , definir - definir, definir
+                                        <h4 class="font-bold">Endereço Matriz</h4>
+                                        <p>Av. Gupe, 10767 - Jardim Itaquiti, Barueri - SP, 06422-120
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold">Endereço CD </h4>
+                                        <p>Av. Gupe, 10767 - Jardim Itaquiti, Barueri - SP, 06422-120
                                         </p>
                                     </div>
                                 </div>
@@ -726,7 +815,7 @@
                                     <i class="fas fa-envelope mt-1 mr-4"></i>
                                     <div>
                                         <h4 class="font-bold">E-mail</h4>
-                                        <p>mababy#gmail.com.br</p>
+                                        <p>contato@mababydistribuidora.com.br</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start">
@@ -886,7 +975,44 @@
     </main>
 
     <!-- Footer -->
-    <footer style="background: linear-gradient(180deg, #048061, #0f5d75);" class=" text-white pt-12 pb-6 px-4">
+     <!-- POPUP BLACK FRIDAY -->
+    <div id="popupBlack" 
+        class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-[9999] hidden">
+
+        <div class="relative bg-white rounded-2xl shadow-xl w-11/12 max-w-lg p-6 animate-popup">
+
+            <!-- Botão fechar -->
+            <button onclick="closePopup()" 
+                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Conteúdo -->
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold mb-2 text-gray-900">
+                    🚀 BLACK FRIDAY MABABY!
+                </h2>
+
+                <p class="text-gray-700 text-lg mb-4">
+                    As melhores ofertas do ano chegaram!  
+                    Condições especiais e vantagens exclusivas para nossos parceiros e clientes.
+                </p>
+
+                <div class="rounded-xl p-4 text-white font-bold mb-6"
+                    style="background-color: black;">
+                    SOMENTE HOJE — APROVEITE AGORA!
+                </div>
+
+                <a href="catalogo.html"
+                class="inline-block px-6 py-3 rounded-2xl text-white font-semibold text-lg shadow-lg transition hover:opacity-90"
+                style="background: linear-gradient(180deg, #048061, #0f5d75);">
+                Ver Ofertas
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: linear-gradient(180deg, #048061, #048061);" class=" text-white pt-12 pb-6 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
 
@@ -911,11 +1037,15 @@
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i>
-                            <span>MABABY@gmail.com.br</span>
+                            <span>contato@mababydistribuidora.com.br</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i>
-                            <span>R. definir -definir,  definir - definir, definir</span>
+                            <span>Av. Gupe, 10767 - Jardim Itaquiti, Barueri - SP, 06422-120</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i>
+                            <span>Av. Gupe, 10767 - Jardim Itaquiti, Barueri - SP, 06422-120</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-clock mt-1 mr-2 text-yellow-500"></i>
@@ -943,7 +1073,27 @@
             </div>
         </div>
     </footer>
+    <script>
+        const counters = document.querySelectorAll('.counter');
 
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const speed = target / 80; // Quanto menor o divisor, mais rápido acelera
+
+            const updateCounter = () => {
+                if (count < target) {
+                    count += speed;
+                    counter.innerText = Math.ceil(count);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCounter();
+        });
+    </script>
     <script>
         // Carousel functionality
         document.addEventListener('DOMContentLoaded', function() {

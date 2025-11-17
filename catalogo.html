@@ -1,114 +1,189 @@
 
+<!--    
+
+    /$$ /$$    /$$                /$$$$$$             /$$$$$$   /$$                                                       /$$ /$$   
+   /$$/| $$   | $$               /$$__  $$           /$$__  $$ | $$                                                      /$$/|  $$  
+  /$$/ | $$   | $$ /$$$$$$/$$$$ | $$  \__/  /$$$$$$ | $$  \__//$$$$$$   /$$  /$$  /$$  /$$$$$$   /$$$$$$   /$$$$$$      /$$/  \  $$ 
+ /$$/  |  $$ / $$/| $$_  $$_  $$|  $$$$$$  /$$__  $$| $$$$   |_  $$_/  | $$ | $$ | $$ |____  $$ /$$__  $$ /$$__  $$    /$$/    \  $$
+|  $$   \  $$ $$/ | $$ \ $$ \ $$ \____  $$| $$  \ $$| $$_/     | $$    | $$ | $$ | $$  /$$$$$$$| $$  \__/| $$$$$$$$   /$$/      /$$/
+ \  $$   \  $$$/  | $$ | $$ | $$ /$$  \ $$| $$  | $$| $$       | $$ /$$| $$ | $$ | $$ /$$__  $$| $$      | $$_____/  /$$/      /$$/ 
+  \  $$   \  $/   | $$ | $$ | $$|  $$$$$$/|  $$$$$$/| $$       |  $$$$/|  $$$$$/$$$$/|  $$$$$$$| $$      |  $$$$$$$ /$$/      /$$/  
+   \__/    \_/    |__/ |__/ |__/ \______/  \______/ |__/        \___/   \_____/\___/  \_______/|__/       \_______/|__/      |__/   
+                                                                                                                                    
+                                                                                                                                    
+     Nos siga em nossa rede social:  https://www.instagram.com/vm_software/                                                                                                                               
+                                                                                                                                   
+-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo</title>
+    <title>Catálogo Mababy</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <!-- Tailwind + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ESTILOS GLOBAIS MEMORIZADOS -->
+    <style>
+        #divIconWhats {
+            cursor: pointer;
+            width: 50px;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            z-index: 6;
+        }
+        #iconWhtas{
+            cursor: pointer;
+            position: fixed;
+            bottom: 5%;
+            right: 2%;
+            width: 50px;           
+            z-index: 6;
+        }
+
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu { transition: all 0.3s ease; }
+
+        .carousel-item { transition: opacity 1s ease-in-out; }
+        .carousel-item:not(.active) { opacity: 0; display: none; }
+        .carousel-item.active { opacity: 1; display: block; }
+
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .faq-item.active .answer { max-height: 500px; }
+
+        .counter { transition: all 1s ease; }
+
+        @media(max-width: 800px){
+            .IMGMVV { display: none; }
+            #Mobille {
+                display: flex;
+                flex-direction: row;
+                font-size: 10px;
+                justify-content: space-between;
+            }
+        }
+
+        #Historia { width: 90%; margin-left: 5%; }
+        .lstaLink {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+        .lstaLink a:hover { color: #0f5d75; font-weight: 700; }
+    </style>
 </head>
-<body>
-    <section id="catalogo-simples" style="--gap:16px; --radius:16px; --brand:#0E4DFB; --text:#1E1E1E; --muted:#6B7280; --bg:#FFFFFF; --shadow:0 6px 24px rgba(0,0,0,.06);">
+
+<body class="font-sans bg-gray-50">
+
+<!-- ========================== HEADER ============================= -->
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <div style="background: linear-gradient(180deg, #048061, #0f5d75);" class="text-white py-1 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+
+            <div class="flex items-center mb-2 md:mb-0">
+                <a href="index.html"><img src="assets/logoHeader.webp" alt="MABABY Logo" class="h-6"></a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="index.html#faq" class="text-sm hover:text-blue-200">Dúvidas Frequentes</a>
+                <a href="index.html#Contato" class="text-sm hover:text-blue-200">Contato</a>
+                <a href="index.html#Jobs" class="text-sm hover:text-blue-200">Trabalhe Conosco</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a target="_blank" href="carrinho.html" class="text-white hover:text-blue-200">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- ====================== INÍCIO DO CATÁLOGO ======================== -->
+
+<section id="catalogo-simples" style="--gap:16px; --radius:16px; --brand:#0E4DFB; --text:#1E1E1E; --muted:#6B7280; --bg:#FFFFFF; --shadow:0 6px 24px rgba(0,0,0,.06);">
+
 <style>
-  #catalogo-simples {
+  #catalogo-simples { 
     --gap: 16px; 
     --radius: 16px; 
     --brand: #0E4DFB; 
     --text: #1E1E1E; 
-    --muted: #6B7280; 
-    --bg: #FFFFFF; 
+    --muted: #6B7280;
+    --bg: #FFFFFF;
     --shadow: 0 6px 24px rgba(0,0,0,.06);
-    --min-card-w: 220px;  /* largura mínima do card (ajuste se quiser) */
-    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue','Noto Sans',Arial;
+    --min-card-w: 220px;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;
     color: var(--text);
     background: var(--bg);
   }
-  #catalogo-simples .wrap{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: clamp(20px, 3vw, 32px) 20px;
-  }
-  #catalogo-simples h2{
-    font-size: clamp(22px, 2.5vw, 30px);
-    margin: 0 0 6px;
-  }
-  #catalogo-simples p.lead{
-    margin: 0 0 24px;
-    color: var(--muted);
-    font-size: clamp(14px, 1.5vw, 16px);
-  }
+  #catalogo-simples .wrap { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
+  #catalogo-simples h2 { font-size: 30px; margin-bottom: 6px; }
+  #catalogo-simples p.lead { margin-bottom: 24px; color: var(--muted); }
 
-  .category{
-    margin: 28px 0 10px;
-    font-size: clamp(16px, 2.2vw, 20px);
-    font-weight: 700;
-  }
+  .category { margin: 28px 0 10px; font-size: 20px; font-weight: 700; }
 
-  /* GRID responsivo (sem breakpoints obrigatórios) */
-  .grid{
+  .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--min-card-w), 1fr));
     gap: var(--gap);
   }
 
-  /* CARD */
-  .card{
+  .card {
     border: 1px solid #eef0f4;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    overflow: hidden;
     background: #fff;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
-  .thumb{
+
+  .thumb {
     padding: 10px;
     aspect-ratio: 4/3;
-    overflow: hidden;
     display: flex;
     justify-content: center;
   }
-  .thumb img{
-  }
-  .body{ padding: 14px }
-  .name{
-    font-weight: 700;
-    line-height: 1.25;
-    margin: 0 0 6px;
-    font-size: clamp(15px, 1.9vw, 16px);
-    word-wrap: break-word;
-  }
-  .desc{
-    font-size: clamp(14px, 1.6vw, 15px);
-    color: var(--muted);
-    margin: 0 0 12px;
-    flex-grow: 1;
-  }
 
-  /* Botão grande e “touch-friendly” */
-  .buy{
+  .body { padding: 14px }
+  .name { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+  .desc { font-size: 15px; color: var(--muted); margin-bottom: 12px; flex-grow: 1; }
+
+  .buy {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 14px;
+    padding: 12px;
     border-radius: 12px;
     background: linear-gradient(180deg, #048061b9, #0f5d75b2);
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-weight: 600;
   }
-  .buy:hover{ filter: brightness(.95) }
-
-  /* Ajustes sutis para telas menores */
-  @media (max-width: 480px){
-    .desc{ font-size: 13.5px }
-    .body{ padding: 12px }
-  }
+  .buy:hover { filter: brightness(.95); }
 </style>
-  <div class="wrap">
+
+<div class="wrap">
     <h2>Catálogo Mababy</h2>
-    <a href="index.html">Voltar</a>
+    <a href="index.html" class="flex items-center gap-2 text-[#0f5d75] font-semibold hover:underline">
+      <i class="fas fa-arrow-left"></i> Voltar
+    </a>
     <!-- ================= HIGIENE E CUIDADOS ================= -->
     <div class="category">Higiene e Cuidados</div>
     <div class="grid">
@@ -322,5 +397,49 @@
     </div>
   </div>
 </section>
+
+
+<!-- ========================== FOOTER =============================== -->
+
+<footer style="background: linear-gradient(180deg, #048061, #0f5d75);" class="text-white pt-12 pb-6 px-4">
+    <div class="container mx-auto">
+
+        <div class="flex flex-col md:flex-row justify-between gap-8 mb-8">
+            <div class="md:w-1/3">
+                <h3 class="text-xl font-bold mb-4">A MABABY</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html#Historia" class="hover:text-yellow-500">Quem Somos</a></li>
+                    <li><a href="index.html#Notícia" class="hover:text-yellow-500">Notícias</a></li>
+                    <li><a href="index.html#Contato" class="hover:text-yellow-500">Contato</a></li>
+                    <li><a href="index.html#Jobs" class="hover:text-yellow-500">Trabalhe Conosco</a></li>
+                </ul>
+            </div>
+
+            <div class="md:w-1/3">
+                <h3 class="text-xl font-bold mb-4">Atendimento</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start"><i class="fas fa-phone-alt mt-1 mr-2 text-yellow-500"></i> +55 14 99814-0452</li>
+                    <li class="flex items-start"><i class="fas fa-envelope mt-1 mr-2 text-yellow-500"></i> MABABY@gmail.com.br</li>
+                    <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-yellow-500"></i> Endereço definir</li>
+                    <li class="flex items-start"><i class="fas fa-clock mt-1 mr-2 text-yellow-500"></i> Seg–Sex: 8h às 18h</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="border-white my-6">
+
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <p>© 2025 MABABY – Todos os direitos reservados</p>
+            <span>Desenvolvido por: <a target="_blank" href="https://www.instagram.com/vm_software/">vm_software</a></span>
+
+            <div class="flex space-x-4">
+                <a target="_blank" href="https://api.whatsapp.com/send/?phone=5514998140452" class="hover:text-yellow-500"><i class="fab fa-whatsapp fa-lg"></i></a>
+                <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="hover:text-yellow-500"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
 </body>
 </html>
