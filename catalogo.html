@@ -2120,7 +2120,7 @@ function movechupeta(direction) {
     <div class="carousel-track" id="carouselTrackkitbanho">
         <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
         <div class="product-card">
-            <img src="assets/catalogo/produtos/mamadeiras/7930-AZ.webp" alt="Produto">
+            <img src="assets/catalogo/produtos/mamadeiras/1173-AZ.webp" alt="Produto">
             <h3>Kits Banho</h3>
             <p>
               Fundo do Mar
@@ -2417,10 +2417,185 @@ function movekitbanho(direction) {
 </script>
 
 
+<!-- ====================== Saboneteiras ======================= -->
+<p class="categoriaProduto">Saboneteiras:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveSaboneteira(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveSaboneteira(1)">&#10095;</button>
+
+    <div class="carousel-track" id="carouselTrackSaboneteira">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1173-AZ.webp" alt="Produto">
+            <h3>Saboneteira Nautíco</h3>
+            <p>
+              EAN: 7898012490811
+            </p>
+            <p><b>Código:</b> 1173-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Nautíco', '1173-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-RS.webp" alt="Produto">
+            <h3>Saboneteira Anplas</h3>
+            <p>
+              EAN: 7898012490710
+            </p>
+            <p><b>Código:</b> 1169-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Anplas', '1169-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-AZ.webp" alt="Produto">
+            <h3>Saboneteira Anplas</h3>
+            <p>
+              EAN: 7898012493445
+            </p>
+            <p><b>Código:</b>  1169-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Anplas', '1169-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-AM.webp" alt="Produto">
+            <h3>Saboneteira Nautíco</h3>
+            <p>
+              EAN: 7898012490811
+            </p>
+            <p><b>Código:</b> 1169-AM</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kits Banho', '1169-AM', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1169-LR.webp" alt="Produto">
+            <h3>Saboneteira Anplas</h3>
+            <p>
+              EAN: 7898012490802
+            </p>
+            <p><b>Código:</b> 1169-LR</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Saboneteira Anplas', '1169-LR', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let Saboneteira = 0;
+function moveSaboneteira(direction) {
+    const track = document.getElementById("carouselTrackSaboneteira");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    Saboneteira += direction;
+
+    if (Saboneteira < 0) Saboneteira = 0;
+    if (Saboneteira > maxIndex) Saboneteira = maxIndex;
+
+    track.style.transform = `translateX(${-Saboneteira * cardWidth}px)`;
+}
+</script>
 
 
 
+<!-- ====================== Acessórios ======================= -->
+<p class="categoriaProduto">Acessórios:</p>
+<div class="carousel-container">
+    <!-- Botões laterais -->
+    <button class="carousel-btn btn-left" onclick="moveAcessorios(-1)">&#10094;</button>
+    <button class="carousel-btn btn-right" onclick="moveAcessorios(1)">&#10095;</button>
 
+    <div class="carousel-track" id="carouselTrackAcessorios">
+        <!-- EXEMPLO de 5 produtos — você pode repetir com sua lista dinâmica -->
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1120-RS.webp" alt="Produto">
+            <h3>Kit Manicure</h3>
+            <p>
+              EAN: 7898012495302
+            </p>
+            <p><b>Código:</b> 1120-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Manicure', '1120-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1110-AZ.webp" alt="Produto">
+            <h3>Kit Manicure</h3>
+            <p>
+              EAN: 7898012495296
+            </p>
+            <p><b>Código:</b> 1110-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Kit Manicure', '1110-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1170-RS.webp" alt="Produto">
+            <h3>Escova Dupla Ação</h3>
+            <p>
+              Limpa Bicos e Mamadeira
+              EAN: 7898012496163
+            </p>
+            <p><b>Código:</b> 1170-RS</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova Dupla Ação', '1170-RS', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1170-AZ.webp" alt="Produto">
+            <h3>Escova Dupla Ação</h3>
+            <p>
+              Limpa Bicos e Mamadeira
+              EAN: 7898012496156
+            </p>
+            <p><b>Código:</b> 1170-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Escova Dupla Ação', '1170-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+
+        <div class="product-card">
+            <img src="assets/catalogo/produtos/mamadeiras/1195-AZ.webp" alt="Produto">
+            <h3>Aspirador Nasal</h3>
+            <p>
+              EAN: 7898012496248
+            </p>
+            <p><b>Código:</b> 1195-AZ</p>
+            <p><b>Preço:</b> R$ XXXX</p>
+            <input class="quantity-input" type="number" min="1" value="1" id="qtd-001">
+            <button class="add-btn" onclick="addToCart('Aspirador Nasal', '1195-AZ', document.getElementById('qtd-001').value)">Adicionar</button>
+        </div>
+        
+    </div>
+</div>
+<script>
+// Lógica simples do carrossel
+let Acessorios = 0;
+function moveAcessorios(direction) {
+    const track = document.getElementById("carouselTrackAcessorios");
+    const cardWidth = track.children[0].offsetWidth + 20; // largura + gap
+    const maxIndex = track.children.length - 1;
+
+    Acessorios += direction;
+
+    if (Acessorios < 0) Acessorios = 0;
+    if (Acessorios > maxIndex) Acessorios = maxIndex;
+
+    track.style.transform = `translateX(${-Acessorios * cardWidth}px)`;
+}
+</script>
 
 
 <!-- ========================== FOOTER =============================== -->
