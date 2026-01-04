@@ -229,8 +229,9 @@
                     <a target="_blank" href="https://www.instagram.com/mababydistribuidora/" class="text-white hover:text-blue-200">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a target="_blank" href="carrinho.html" class="text-white hover:text-blue-200">
+                    <a href="carrinho.html" class="cart-link text-white hover:text-blue-200">
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">3</span>
                     </a>
                 </div>
             </div>
@@ -249,7 +250,26 @@
             </div>
         </nav>
     </header>
+    <style>
+        .cart-link {
+  position: relative;
+  color: white;
+  font-size: 20px;
+}
 
+.cart-count {
+  position: absolute;
+  top: -3px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 999px;
+  line-height: 1;
+}
+    </style>
     <!-- Main Content -->
     <main>
         <!-- Hero Carousel -->
@@ -1001,7 +1021,7 @@
             <!-- Conteúdo -->
             <div class="text-center">
                 <h2 class="text-3xl font-extrabold mb-2 text-gray-900">
-                    🚀 BLACK FRIDAY MABABY!
+                    🚀 MABABY DISTRIBUIDORA!
                 </h2>
 
                 <p class="text-gray-700 text-lg mb-4">
@@ -1286,5 +1306,22 @@
             }
         });
     </script>
+
+    <!-- load de itens no carronho-->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const itens = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartCount = document.querySelector('.cart-count');
+
+    if (cartCount) {
+      cartCount.innerText = itens.length;
+
+      // opcional: esconder quando estiver vazio
+      if (itens.length === 0) {
+        cartCount.style.display = 'none';
+      }
+    }
+  });
+</script>
 </body>
 </html>
